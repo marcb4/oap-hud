@@ -18,13 +18,14 @@ pygame.display.set_caption('image')
 
 # create a surface object, image is drawn on it.
 imp = ""
-nav = "turn_left"
+nav = ""
 # Using blit to copy content from one surface to other
 
 status = True
 while (status):
+    scrn.fill((0, 0, 0))
     if nav == "turn_left":
-        imp = pygame.image.load('D:\Code\pygame_example\\turn_left.png').convert()
+        imp = pygame.image.load('D:\Code\pygame_example\\turn_left.png').convert_alpha()
         scrn.blit(imp,(0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
