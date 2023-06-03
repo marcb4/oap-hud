@@ -1,0 +1,15 @@
+[Unit]
+Description=OAP Head Up Display
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/oap-hud/hud.py
+Restart=on-failure
+RestartSec=1s
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
